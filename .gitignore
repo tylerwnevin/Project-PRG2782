@@ -38,3 +38,6 @@ Desktop.ini
 
 ## Logs
 *.log
+
+## Local-only scripts (not for the repo)
+push-to-github.ps1
