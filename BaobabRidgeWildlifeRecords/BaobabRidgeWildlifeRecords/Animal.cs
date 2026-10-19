@@ -17,7 +17,7 @@ namespace BaobabRidgeWildlifeRecords
         public string Status { get; private set; }
         public string HousingUnit { get; private set; }
 
-        public Animal(string animalID, string name, string species, int age, int recoveryscore)
+        private Animal(string animalID, string name, string species, int age, int recoveryscore) //Private constructor
         {
             AnimalID = animalID;
             Name = name;
@@ -25,6 +25,20 @@ namespace BaobabRidgeWildlifeRecords
             Age = age;
             RecoveryScore = recoveryscore;
             Recalculate();
+        }
+
+        public static bool TryCreate(string animalID, string name, string species,
+                                     int age, int recoveryscore, out Animal animal)   //Validates all inputs following business rules before calling constructor
+        {
+            if ((animalID.Length != 6) || (name.Length > 30) || (name.Length < 1) || (species.Length > 30)
+                || (species.Length < 1) || (age > 100) || (age < 0)
+                || (recoveryscore > 100) || (recoveryscore < 0))
+            {
+                animal = null;
+                return false;
+            }
+            animal = new Animal(animalID, name, species, age, recoveryscore);
+            return true;
         }
 
         public void Recalculate()
