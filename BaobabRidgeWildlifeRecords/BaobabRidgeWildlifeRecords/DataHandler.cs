@@ -77,7 +77,7 @@ namespace BaobabRidgeWildlifeRecords
             }
         }
 
-        public List<Animal> ViewAnimals() //Sends animal list to program for viewing
+        internal List<Animal> ViewAnimals() //Sends animal list to program for viewing
         {
             return Animals;
         }
