@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaobabRidgeWildlifeRecords
 {
-    internal class Animal
+    public class Animal
     {
 
         public string AnimalID { get; }
@@ -30,7 +30,7 @@ namespace BaobabRidgeWildlifeRecords
         public static bool TryCreate(string animalID, string name, string species,
                                      int age, int recoveryscore, out Animal animal)   //Validates all inputs following business rules before calling constructor
         {
-            if ((animalID.Length != 6) || (name.Length > 30) || (name.Length < 1) || (species.Length > 30)
+            if ((animalID.Length != 7) || (name.Length > 30) || (name.Length < 1) || (species.Length > 30)
                 || (species.Length < 1) || (age > 100) || (age < 0)
                 || (recoveryscore > 100) || (recoveryscore < 0))
             {
@@ -43,8 +43,8 @@ namespace BaobabRidgeWildlifeRecords
 
         public void Recalculate()
         {
-            if (RecoveryScore > 0 && RecoveryScore < 20)
-            {
+            if (RecoveryScore >= 0 && RecoveryScore < 20)
+                {
                 Status = "Critical";
                 HousingUnit = "Intensive Care Unit";
             }

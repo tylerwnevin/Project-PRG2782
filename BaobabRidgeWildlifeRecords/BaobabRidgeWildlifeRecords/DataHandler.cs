@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaobabRidgeWildlifeRecords
 {
-    internal class DataHandler
+    public class DataHandler
     {
 
         private List<Animal> Animals {  get; set; }
@@ -50,11 +50,26 @@ namespace BaobabRidgeWildlifeRecords
             }
         }
 
-
-        public void AddAnimal() //Adds animal to list
+public bool AddAnimal(Animal animal)
         {
+            if (Animals.Any(a => a.AnimalID == animal.AnimalID))
+                return false;
 
+            Animals.Add(animal);
+
+            try
+            {
+                WriteToAnimalFile();
+                return true;
+            }
+            catch
+            {
+                Animals.Remove(animal);
+                throw;
+            }
         }
+
+      
 
         public void RemoveAnimal(string animalID) //Removes animal from list
         {
@@ -68,6 +83,7 @@ namespace BaobabRidgeWildlifeRecords
                         MessageBox.Show("Animal was successfully found and deleted");
                         return;
                     }
+
                 }
                 MessageBox.Show("Animal was not found");
             }
@@ -82,9 +98,23 @@ namespace BaobabRidgeWildlifeRecords
             return Animals;
         }
 
-        public void UpdateAnimal() //Changes an animal in list
+        public bool UpdateAnimal(string id, string name,
+    string species, int age, int score)
         {
+            Animal existing = Animals.Find(a => a.AnimalID == id);
 
+            if (existing == null)
+                return false;
+
+            if (!Animal.TryCreate(id, name, species, age,
+                score, out Animal updated))
+                return false;
+
+            int index = Animals.IndexOf(existing);
+            Animals[index] = updated;
+
+            WriteToAnimalFile();
+            return true;
         }
 
         public void GenerateSummary() //Generates summary
