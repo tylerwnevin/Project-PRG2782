@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\miava\\OneDrive\\Desktop\\BComp Year 2\\PRG282\\Project\\Clone\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords.csproj",
+      "projectUniqueName": "C:\\Users\\miava\\OneDrive\\Desktop\\BComp Year 2\\PRG282\\Project\\Clone 2\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords.csproj",
       "projectName": "BaobabRidgeWildlifeRecords",
-      "projectPath": "C:\\Users\\miava\\OneDrive\\Desktop\\BComp Year 2\\PRG282\\Project\\Clone\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords.csproj",
+      "projectPath": "C:\\Users\\miava\\OneDrive\\Desktop\\BComp Year 2\\PRG282\\Project\\Clone 2\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords.csproj",
       "packagesPath": "C:\\Users\\miava\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\miava\\OneDrive\\Desktop\\BComp Year 2\\PRG282\\Project\\Clone\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords\\obj\\",
+      "outputPath": "C:\\Users\\miava\\OneDrive\\Desktop\\BComp Year 2\\PRG282\\Project\\Clone 2\\BaobabRidgeWildlifeRecords\\BaobabRidgeWildlifeRecords\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

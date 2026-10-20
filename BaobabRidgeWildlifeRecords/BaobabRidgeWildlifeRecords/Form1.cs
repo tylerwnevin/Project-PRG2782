@@ -1,5 +1,3 @@
-using System.Drawing.Text;
-
 namespace BaobabRidgeWildlifeRecords;
 
 /// <summary>
@@ -22,6 +20,7 @@ public partial class grpAnimalRecords : Form
     {
         ConfigureDataGridView();
         RefreshAnimalGrid();
+        InitializeSummaryUI();
     }
 
     //Configures DataGridView properties
@@ -64,6 +63,49 @@ public partial class grpAnimalRecords : Form
         {
             MessageBox.Show($"{dataHandler.skipped} invalid records were skipped during load.");
         }
+    }
+
+    //summary UI Controls
+    private GroupBox grpSummary;
+    private Label lblTotalVal;
+    private Label lblAvgAgeVal;
+    private Label lblAvgScoreVal;
+    private Label lblStatusCountsVal;
+
+    // Creates and adds the summary groupbox to the form dynamically
+    private void InitializeSummaryUI()
+    {
+        grpSummary = new GroupBox
+        {
+            Text = "Summary Report",
+            Location = new System.Drawing.Point(20, 715),
+            Size = new System.Drawing.Size(1583, 75),
+            ForeColor = System.Drawing.Color.Black,
+            BackColor = System.Drawing.Color.White
+        };
+
+        Label lblTotal = new Label { Text = "Total Animals:", Location = new System.Drawing.Point(15, 30), AutoSize = true, ForeColor = System.Drawing.Color.Black };
+        lblTotalVal = new Label { Text = "-", Location = new System.Drawing.Point(115, 30), AutoSize = true, Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkGreen };
+
+        Label lblAvgAge = new Label { Text = "Avg Age:", Location = new System.Drawing.Point(180, 30), AutoSize = true, ForeColor = System.Drawing.Color.Black };
+        lblAvgAgeVal = new Label { Text = "-", Location = new System.Drawing.Point(250, 30), AutoSize = true, Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkGreen };
+
+        Label lblAvgScore = new Label { Text = "Avg Score:", Location = new System.Drawing.Point(340, 30), AutoSize = true, ForeColor = System.Drawing.Color.Black };
+        lblAvgScoreVal = new Label { Text = "-", Location = new System.Drawing.Point(420, 30), AutoSize = true, Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkGreen };
+
+        Label lblStatus = new Label { Text = "Counts per Status:", Location = new System.Drawing.Point(520, 30), AutoSize = true, ForeColor = System.Drawing.Color.Black };
+        lblStatusCountsVal = new Label { Text = "Critical: 0 | Serious: 0 | Stable: 0 | Recovering: 0 | Release-Ready: 0", Location = new System.Drawing.Point(650, 30), AutoSize = true, Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkBlue };
+
+        grpSummary.Controls.Add(lblTotal);
+        grpSummary.Controls.Add(lblTotalVal);
+        grpSummary.Controls.Add(lblAvgAge);
+        grpSummary.Controls.Add(lblAvgAgeVal);
+        grpSummary.Controls.Add(lblAvgScore);
+        grpSummary.Controls.Add(lblAvgScoreVal);
+        grpSummary.Controls.Add(lblStatus);
+        grpSummary.Controls.Add(lblStatusCountsVal);
+
+        Controls.Add(grpSummary);
     }
 
     /// <summary>
@@ -419,6 +461,7 @@ public partial class grpAnimalRecords : Form
         buttonGenerate.TabIndex = 5;
         buttonGenerate.Text = "Generate Summary";
         buttonGenerate.UseVisualStyleBackColor = false;
+        buttonGenerate.Click += buttonGenerate_Click;
         // 
         // buttonDelete
         // 
@@ -584,5 +627,21 @@ public partial class grpAnimalRecords : Form
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
 
+    }
+
+    private void buttonGenerate_Click(object sender, EventArgs e)
+    {
+        var summary = dataHandler.GenerateSummary();
+
+        // Update display labels on the form
+        lblTotalVal.Text = summary.total.ToString();
+        lblAvgAgeVal.Text = summary.avgAge;
+        lblAvgScoreVal.Text = summary.avgScore;
+
+        var c = summary.statusCounts;
+        lblStatusCountsVal.Text = $"Critical: {c["Critical"]} | Serious: {c["Serious"]} | Stable: {c["Stable"]} | Recovering: {c["Recovering"]} | Release-Ready: {c["Release-Ready"]}";
+
+        MessageBox.Show("Summary report generated and saved to summary.txt successfully!",
+                        "Summary Generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 }
