@@ -39,14 +39,18 @@ namespace BaobabRidgeWildlifeRecords
                         continue;
                     }
 
-                    if (!Animal.TryCreate(temp[0], temp[1], temp[2], age, score, out Animal animal)) //Tries to create the object. Skips if it fails
+                    string status = temp.Length > 5 ? temp[5] : "In Treatment";
+                    string housingUnit = temp.Length > 6 ? temp[6] : "Unassigned";
+
+                    if (!Animal.TryCreate(temp[0], temp[1], temp[2], age, score, status, housingUnit, out Animal animal)) //Tries to create the object. Skips if it fails
                     {
                         skipped++;
                         continue;
                     }
+
+
                     Animals.Add(animal);
                 }
-                MessageBox.Show($"{skipped} invalid records were skipped");
             }
         }
 

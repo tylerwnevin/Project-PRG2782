@@ -27,7 +27,7 @@ namespace BaobabRidgeWildlifeRecords
             this.housingUnit = housingUnit;
         }
 
-        public static bool TryCreate(string animalID, string name, string species, int age, int recoveryScore, out Animal animal)
+        public static bool TryCreate(string animalID, string name, string species, int age, int recoveryScore, string status, string housingUnit, out Animal animal)
         {
             if (string.IsNullOrWhiteSpace(animalID) || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(species))
             {
@@ -35,7 +35,7 @@ namespace BaobabRidgeWildlifeRecords
                 return false;
             }
 
-            animal = new Animal(animalID, name, species, age, recoveryScore);
+            animal = new Animal(animalID, name, species, age, recoveryScore, status, housingUnit);
             return true;
         }
     }

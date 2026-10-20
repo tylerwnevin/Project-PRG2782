@@ -16,8 +16,6 @@ public partial class grpAnimalRecords : Form
 
         InitializeComponent();
         dataHandler = new DataHandler();
-
-        this.Load += Form1_Load;
     }
 
     private void Form1_Load(object sender, EventArgs e)
@@ -29,6 +27,7 @@ public partial class grpAnimalRecords : Form
     //Configures DataGridView properties
     private void ConfigureDataGridView()
     {
+        dgvAnimals.AutoGenerateColumns = false;
         dgvAnimals.ReadOnly = true;
         dgvAnimals.AllowUserToAddRows = false;
         dgvAnimals.AllowUserToDeleteRows = false;
@@ -40,20 +39,25 @@ public partial class grpAnimalRecords : Form
     //Loads Animals from DataHandler into the DataGridView
     public void RefreshAnimalGrid()
     {
-       dgvAnimals.DataSource = null;
+        dgvAnimals.DataSource = null;
         dgvAnimals.DataSource = dataHandler.ViewAnimals();
 
-        // set the exact column order and headers
-        if (dgvAnimals.Columns.Count > 0)
-        {
-            dgvAnimals.Columns["AnimalID"].HeaderText = "Animal ID";
-            dgvAnimals.Columns["Name"].HeaderText = "Name";
-            dgvAnimals.Columns["Species"].HeaderText = "Species";
-            dgvAnimals.Columns["Age"].HeaderText = "Age";
-            dgvAnimals.Columns["RecoveryScore"].HeaderText = "Recovery Score";
-            dgvAnimals.Columns["Status"].HeaderText = "Status";
-            dgvAnimals.Columns["HousingUnit"].HeaderText = "Housing Unit";
-        }
+        colAnimalID.DataPropertyName = "animalID"; // or "AnimalID" if capitalized in Animal.cs
+        colName.DataPropertyName = "name";
+        colSpecies.DataPropertyName = "species";
+        colAge.DataPropertyName = "age";
+        colRecoveryScore.DataPropertyName = "recoveryScore";
+        colStatus.DataPropertyName = "status";
+        colHousingUnit.DataPropertyName = "housingUnit";
+
+        // Set the headers on the designer-defined columns.
+        colAnimalID.HeaderText = "Animal ID";
+        colName.HeaderText = "Name";
+        colSpecies.HeaderText = "Species";
+        colAge.HeaderText = "Age";
+        colRecoveryScore.HeaderText = "Recovery Score";
+        colStatus.HeaderText = "Status";
+        colHousingUnit.HeaderText = "Housing Unit";
 
         //notify the user if lines were skipped during load
         if (dataHandler.skipped > 0)
@@ -352,6 +356,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colAnimalID
         // 
+        colAnimalID.DataPropertyName = "animalID";
         colAnimalID.HeaderText = "Animal ID";
         colAnimalID.MinimumWidth = 10;
         colAnimalID.Name = "colAnimalID";
@@ -359,6 +364,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colName
         // 
+        colName.DataPropertyName = "name";
         colName.HeaderText = "Name";
         colName.MinimumWidth = 10;
         colName.Name = "colName";
@@ -366,6 +372,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colSpecies
         // 
+        colSpecies.DataPropertyName = "species";
         colSpecies.HeaderText = "Species";
         colSpecies.MinimumWidth = 10;
         colSpecies.Name = "colSpecies";
@@ -373,6 +380,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colAge
         // 
+        colAge.DataPropertyName = "age";
         colAge.HeaderText = "Age";
         colAge.MinimumWidth = 10;
         colAge.Name = "colAge";
@@ -380,6 +388,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colRecoveryScore
         // 
+        colRecoveryScore.DataPropertyName = "recoveryScore";
         colRecoveryScore.HeaderText = "Recovery Score";
         colRecoveryScore.MinimumWidth = 10;
         colRecoveryScore.Name = "colRecoveryScore";
@@ -387,6 +396,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colStatus
         // 
+        colStatus.DataPropertyName = "status";
         colStatus.HeaderText = "Status";
         colStatus.MinimumWidth = 10;
         colStatus.Name = "colStatus";
@@ -394,6 +404,7 @@ public partial class grpAnimalRecords : Form
         // 
         // colHousingUnit
         // 
+        colHousingUnit.DataPropertyName = "housingUnit";
         colHousingUnit.HeaderText = "Housing Unit";
         colHousingUnit.MinimumWidth = 10;
         colHousingUnit.Name = "colHousingUnit";
