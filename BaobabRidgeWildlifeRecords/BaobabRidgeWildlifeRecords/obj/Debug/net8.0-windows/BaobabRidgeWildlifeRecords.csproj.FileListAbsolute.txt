@@ -64,3 +64,22 @@ C:\Users\miava\OneDrive\Desktop\BComp Year 2\PRG282\Project\Clone 2\BaobabRidgeW
 C:\Users\miava\OneDrive\Desktop\BComp Year 2\PRG282\Project\Clone 2\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.genruntimeconfig.cache
 C:\Users\miava\OneDrive\Desktop\BComp Year 2\PRG282\Project\Clone 2\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\ref\BaobabRidgeWildlifeRecords.dll
 C:\Users\miava\OneDrive\Desktop\BComp Year 2\PRG282\Project\Clone 2\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRi.162489EB.Up2Date
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.grpAnimalRecords.resources
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.Properties.Resources.resources
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.csproj.GenerateResource.cache
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.AssemblyInfoInputs.cache
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.AssemblyInfo.cs
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.csproj.CoreCompileInputs.cache
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.dll
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\refint\BaobabRidgeWildlifeRecords.dll
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.pdb
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\bin\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.exe
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\bin\Debug\net8.0-windows\Animals.txt
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\bin\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.deps.json
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\bin\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.runtimeconfig.json
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\bin\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.dll
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\bin\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.pdb
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRidgeWildlifeRecords.genruntimeconfig.cache
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\ref\BaobabRidgeWildlifeRecords.dll
+C:\Users\rianp\OneDrive\Desktop\Pron\Universiteit\PRG282\Project\Project-PRG2782-main\BaobabRidgeWildlifeRecords\BaobabRidgeWildlifeRecords\obj\Debug\net8.0-windows\BaobabRi.162489EB.Up2Date
