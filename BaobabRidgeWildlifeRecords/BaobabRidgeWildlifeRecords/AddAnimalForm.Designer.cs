@@ -31,7 +31,7 @@
             lblAnimalName = new Label();
             lblAnimalID = new Label();
             txtAnimalName = new TextBox();
-            TextanimalID = new TextBox();
+            txtAnimalID = new TextBox();
             textBox5 = new TextBox();
             label3 = new Label();
             label4 = new Label();
@@ -41,7 +41,7 @@
             btnSaveAnimal = new Button();
             numAge = new NumericUpDown();
             numRecoveryScore = new NumericUpDown();
-            cmbSpecies = new ComboBox();
+            txtSpecies = new TextBox();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numRecoveryScore).BeginInit();
             SuspendLayout();
@@ -60,9 +60,10 @@
             lblAnimalID.AutoSize = true;
             lblAnimalID.Location = new Point(129, 59);
             lblAnimalID.Name = "lblAnimalID";
-            lblAnimalID.Size = new Size(75, 20);
+            lblAnimalID.Size = new Size(71, 20);
             lblAnimalID.TabIndex = 4;
-            lblAnimalID.Text = "Animal ID";
+            lblAnimalID.Text = "AnimalID";
+            lblAnimalID.Click += lblAnimalID_Click;
             // 
             // txtAnimalName
             // 
@@ -71,13 +72,13 @@
             txtAnimalName.Size = new Size(441, 27);
             txtAnimalName.TabIndex = 6;
             // 
-            // TextanimalID
+            // txtAnimalID
             // 
-            TextanimalID.Location = new Point(129, 82);
-            TextanimalID.Name = "TextanimalID";
-            TextanimalID.Size = new Size(441, 27);
-            TextanimalID.TabIndex = 7;
-            TextanimalID.TextChanged += textBox3_TextChanged;
+            txtAnimalID.Location = new Point(129, 82);
+            txtAnimalID.Name = "txtAnimalID";
+            txtAnimalID.Size = new Size(441, 27);
+            txtAnimalID.TabIndex = 7;
+            txtAnimalID.TextChanged += textBox3_TextChanged;
             // 
             // textBox5
             // 
@@ -159,20 +160,19 @@
             numRecoveryScore.Size = new Size(150, 27);
             numRecoveryScore.TabIndex = 21;
             // 
-            // cmbSpecies
+            // txtSpecies
             // 
-            cmbSpecies.FormattingEnabled = true;
-            cmbSpecies.Location = new Point(129, 212);
-            cmbSpecies.Name = "cmbSpecies";
-            cmbSpecies.Size = new Size(151, 28);
-            cmbSpecies.TabIndex = 23;
+            txtSpecies.Location = new Point(129, 213);
+            txtSpecies.Name = "txtSpecies";
+            txtSpecies.Size = new Size(125, 27);
+            txtSpecies.TabIndex = 22;
             // 
             // AddAnimalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(cmbSpecies);
+            Controls.Add(txtSpecies);
             Controls.Add(numRecoveryScore);
             Controls.Add(numAge);
             Controls.Add(btnSaveAnimal);
@@ -182,7 +182,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(textBox5);
-            Controls.Add(TextanimalID);
+            Controls.Add(txtAnimalID);
             Controls.Add(txtAnimalName);
             Controls.Add(lblAnimalID);
             Controls.Add(lblAnimalName);
@@ -198,7 +198,7 @@
         private Label lblAnimalName;
         private Label lblAnimalID;
         private TextBox txtAnimalName;
-        private TextBox TextanimalID;
+        private TextBox txtAnimalID;
         private TextBox textBox5;
         private Label label3;
         private Label label4;
@@ -208,6 +208,6 @@
         private Button btnSaveAnimal;
         private NumericUpDown numAge;
         private NumericUpDown numRecoveryScore;
-        private ComboBox cmbSpecies;
+        private TextBox txtSpecies;
     }
 }

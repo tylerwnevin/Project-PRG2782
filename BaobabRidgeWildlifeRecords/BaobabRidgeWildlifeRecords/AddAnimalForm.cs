@@ -50,12 +50,12 @@ namespace BaobabRidgeWildlifeRecords
         private void button2_Click(object sender, EventArgs e)
         {
 
-            string id = lblAnimalID.Text.Trim();
+            string id = txtAnimalID.Text.Trim();
             string name = txtAnimalName.Text.Trim();
-            string species = cmbSpecies.Text.Trim();
+            string species = txtSpecies.Text.Trim();
             int age = (int)numAge.Value;
             int score = (int)numRecoveryScore.Value;
-           
+
             if (!Animal.TryCreate(id, name, species, age, score,
     out Animal animal))
             {
@@ -78,7 +78,7 @@ namespace BaobabRidgeWildlifeRecords
             }
             catch (Exception ex)
             {
-                MessageBox.Show( ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -86,6 +86,11 @@ namespace BaobabRidgeWildlifeRecords
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblAnimalID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
