@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,43 +8,43 @@ namespace BaobabRidgeWildlifeRecords
 {
     public class Animal
     {
+        public string animalID { get; set; }
+        public string name { get; set; }
+        public string species { get; set; }
+        public int age { get; set; }
+        public int recoveryScore { get; set; }
+        public string status { get; set; }
+        public string housingUnit { get; set; }
 
-        public string AnimalID { get; }
-        public string Name { get; set; }
-        public string Species { get; set; }
-        public int Age { get; set; }
-        public int RecoveryScore { get; set; }
-        public string Status { get; private set; }
-        public string HousingUnit { get; private set; }
-
-        private Animal(string animalID, string name, string species, int age, int recoveryscore) //Private constructor
+        public Animal(string animalID, string name, string species, int age, int recoveryScore, string status = "In Treatment", string housingUnit = "Unassigned")
         {
-            AnimalID = animalID;
-            Name = name;
-            Species = species;
-            Age = age;
-            RecoveryScore = recoveryscore;
-            Recalculate();
+            this.animalID = animalID;
+            this.name = name;
+            this.species = species;
+            this.age = age;
+            this.recoveryScore = recoveryScore;
+            this.status = status;
+            this.housingUnit = housingUnit;
         }
 
-        public static bool TryCreate(string animalID, string name, string species,
-                                     int age, int recoveryscore, out Animal animal)   //Validates all inputs following business rules before calling constructor
+        public static bool TryCreate(string animalID, string name, string species, int age, int recoveryScore, string status, string housingUnit, out Animal animal)
         {
-            if ((animalID.Length != 7) || (name.Length > 30) || (name.Length < 1) || (species.Length > 30)
+            if ((animalID.Length != 6) || (name.Length > 30) || (name.Length < 1) || (species.Length > 30)
                 || (species.Length < 1) || (age > 100) || (age < 0)
-                || (recoveryscore > 100) || (recoveryscore < 0))
+                || (recoveryScore > 100) || (recoveryScore < 0))
             {
                 animal = null;
                 return false;
             }
-            animal = new Animal(animalID, name, species, age, recoveryscore);
+
+            animal = new Animal(animalID, name, species, age, recoveryScore, status, housingUnit);
             return true;
         }
 
         public void Recalculate()
         {
-            if (RecoveryScore >= 0 && RecoveryScore < 20)
-                {
+            if (RecoveryScore > 0 && RecoveryScore < 20)
+            {
                 Status = "Critical";
                 HousingUnit = "Intensive Care Unit";
             }

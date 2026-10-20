@@ -1,0 +1,4 @@
+A101|Simba|Lion|5|85|Healthy|Enclosure 1
+A102|Kaa|Python|3|90|Recovered|Terrarium 4
+A103|Zazu|Hornbill|2|60|In Treatment|Aviary 2
+A104|Dumbo|Elephant|8|75|Stable|Enclosure 3
