@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BaobabRidgeWildlifeRecords")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+294420dc31be14e638ca82019a2aaa03d6c88fb6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+959b2c30dbc29753fff0b773fa99597e5799da10")]
 [assembly: System.Reflection.AssemblyProductAttribute("BaobabRidgeWildlifeRecords")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BaobabRidgeWildlifeRecords")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

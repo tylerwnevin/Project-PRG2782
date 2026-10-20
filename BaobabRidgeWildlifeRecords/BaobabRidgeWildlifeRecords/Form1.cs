@@ -1,3 +1,5 @@
+using System.Drawing.Text;
+
 namespace BaobabRidgeWildlifeRecords;
 
 /// <summary>
@@ -8,8 +10,10 @@ public partial class grpAnimalRecords : Form
     /// <summary>
     /// Creates the main form.
     /// </summary>
+    private DataHandler dataHandler;
     public grpAnimalRecords()
     {
+
         InitializeComponent();
         dataHandler = new DataHandler();
 
@@ -84,7 +88,7 @@ public partial class grpAnimalRecords : Form
         txtAnimalID = new TextBox();
         lblAnimalID = new Label();
         groupBox1 = new GroupBox();
-        dataGridView1 = new DataGridView();
+        dgvAnimals = new DataGridView();
         colAnimalID = new DataGridViewTextBoxColumn();
         colName = new DataGridViewTextBoxColumn();
         colSpecies = new DataGridViewTextBoxColumn();
@@ -100,7 +104,7 @@ public partial class grpAnimalRecords : Form
         lblTitle.SuspendLayout();
         grpAnimalDetails.SuspendLayout();
         groupBox1.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
         SuspendLayout();
         // 
         // lblTitle
@@ -121,7 +125,7 @@ public partial class grpAnimalRecords : Form
         label1.ForeColor = SystemColors.ControlLightLight;
         label1.Location = new Point(0, 0);
         label1.Name = "label1";
-        label1.Size = new Size(197, 37);
+        label1.Size = new Size(381, 72);
         label1.TabIndex = 1;
         label1.Text = "Baobab Ridge";
         // 
@@ -131,7 +135,7 @@ public partial class grpAnimalRecords : Form
         label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
         label2.Location = new Point(12, 37);
         label2.Name = "label2";
-        label2.Size = new Size(231, 17);
+        label2.Size = new Size(451, 36);
         label2.TabIndex = 0;
         label2.Text = "Wildlife Rehabilitation Records System";
         // 
@@ -211,7 +215,7 @@ public partial class grpAnimalRecords : Form
         // 
         textAgeID.Location = new Point(336, 106);
         textAgeID.Name = "textAgeID";
-        textAgeID.Size = new Size(276, 25);
+        textAgeID.Size = new Size(276, 43);
         textAgeID.TabIndex = 11;
         // 
         // label7
@@ -219,7 +223,7 @@ public partial class grpAnimalRecords : Form
         label7.AutoSize = true;
         label7.Location = new Point(390, 81);
         label7.Name = "label7";
-        label7.Size = new Size(0, 19);
+        label7.Size = new Size(0, 37);
         label7.TabIndex = 10;
         // 
         // txtAgeID
@@ -227,28 +231,28 @@ public partial class grpAnimalRecords : Form
         txtAgeID.AutoSize = true;
         txtAgeID.Location = new Point(381, 89);
         txtAgeID.Name = "txtAgeID";
-        txtAgeID.Size = new Size(0, 19);
+        txtAgeID.Size = new Size(0, 37);
         txtAgeID.TabIndex = 9;
         // 
         // txtRevoeryScoreID
         // 
         txtRevoeryScoreID.Location = new Point(16, 156);
         txtRevoeryScoreID.Name = "txtRevoeryScoreID";
-        txtRevoeryScoreID.Size = new Size(276, 25);
+        txtRevoeryScoreID.Size = new Size(276, 43);
         txtRevoeryScoreID.TabIndex = 8;
         // 
         // txtSpeciesID
         // 
         txtSpeciesID.Location = new Point(15, 106);
         txtSpeciesID.Name = "txtSpeciesID";
-        txtSpeciesID.Size = new Size(277, 25);
+        txtSpeciesID.Size = new Size(277, 43);
         txtSpeciesID.TabIndex = 7;
         // 
         // txtNameID
         // 
         txtNameID.Location = new Point(336, 53);
         txtNameID.Name = "txtNameID";
-        txtNameID.Size = new Size(276, 25);
+        txtNameID.Size = new Size(276, 43);
         txtNameID.TabIndex = 6;
         txtNameID.TextChanged += textBox1_TextChanged;
         // 
@@ -258,7 +262,7 @@ public partial class grpAnimalRecords : Form
         lblRecoveryScoreID.ForeColor = Color.Black;
         lblRecoveryScoreID.Location = new Point(15, 134);
         lblRecoveryScoreID.Name = "lblRecoveryScoreID";
-        lblRecoveryScoreID.Size = new Size(101, 19);
+        lblRecoveryScoreID.Size = new Size(195, 37);
         lblRecoveryScoreID.TabIndex = 5;
         lblRecoveryScoreID.Text = "Recovery Score";
         lblRecoveryScoreID.Click += label6_Click;
@@ -269,7 +273,7 @@ public partial class grpAnimalRecords : Form
         lblAgeID.ForeColor = Color.Black;
         lblAgeID.Location = new Point(336, 86);
         lblAgeID.Name = "lblAgeID";
-        lblAgeID.Size = new Size(77, 19);
+        lblAgeID.Size = new Size(148, 37);
         lblAgeID.TabIndex = 4;
         lblAgeID.Text = "Age (years)";
         // 
@@ -279,7 +283,7 @@ public partial class grpAnimalRecords : Form
         lblNameID.ForeColor = Color.Black;
         lblNameID.Location = new Point(336, 31);
         lblNameID.Name = "lblNameID";
-        lblNameID.Size = new Size(45, 19);
+        lblNameID.Size = new Size(88, 37);
         lblNameID.TabIndex = 3;
         lblNameID.Text = "Name";
         lblNameID.Click += label4_Click_1;
@@ -290,7 +294,7 @@ public partial class grpAnimalRecords : Form
         lblSpeciesID.ForeColor = Color.Black;
         lblSpeciesID.Location = new Point(15, 84);
         lblSpeciesID.Name = "lblSpeciesID";
-        lblSpeciesID.Size = new Size(53, 19);
+        lblSpeciesID.Size = new Size(105, 37);
         lblSpeciesID.TabIndex = 2;
         lblSpeciesID.Text = "Species";
         // 
@@ -298,7 +302,7 @@ public partial class grpAnimalRecords : Form
         // 
         txtAnimalID.Location = new Point(15, 53);
         txtAnimalID.Name = "txtAnimalID";
-        txtAnimalID.Size = new Size(277, 25);
+        txtAnimalID.Size = new Size(277, 43);
         txtAnimalID.TabIndex = 1;
         txtAnimalID.TextChanged += txtAnimalID_TextChanged;
         // 
@@ -309,14 +313,14 @@ public partial class grpAnimalRecords : Form
         lblAnimalID.ForeColor = SystemColors.ControlText;
         lblAnimalID.Location = new Point(15, 31);
         lblAnimalID.Name = "lblAnimalID";
-        lblAnimalID.Size = new Size(69, 19);
+        lblAnimalID.Size = new Size(133, 37);
         lblAnimalID.TabIndex = 0;
         lblAnimalID.Text = "Animal ID";
         lblAnimalID.Click += label3_Click;
         // 
         // groupBox1
         // 
-        groupBox1.Controls.Add(dataGridView1);
+        groupBox1.Controls.Add(dgvAnimals);
         groupBox1.Controls.Add(buttonGenerate);
         groupBox1.Controls.Add(buttonDelete);
         groupBox1.Controls.Add(buttonSearch);
@@ -329,61 +333,69 @@ public partial class grpAnimalRecords : Form
         groupBox1.TabStop = false;
         groupBox1.Text = "Animal Records";
         // 
-        // dataGridView1
+        // dgvAnimals
         // 
-        dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colAnimalID, colName, colSpecies, colAge, colRecoveryScore, colStatus, colHousingUnit });
-        dataGridView1.EnableHeadersVisualStyles = false;
-        dataGridView1.GridColor = SystemColors.WindowText;
-        dataGridView1.Location = new Point(33, 43);
-        dataGridView1.Name = "dataGridView1";
-        dataGridView1.RowHeadersVisible = false;
-        dataGridView1.Size = new Size(1487, 175);
-        dataGridView1.TabIndex = 6;
-        dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+        dgvAnimals.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvAnimals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvAnimals.BackgroundColor = SystemColors.ControlLightLight;
+        dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { colAnimalID, colName, colSpecies, colAge, colRecoveryScore, colStatus, colHousingUnit });
+        dgvAnimals.EnableHeadersVisualStyles = false;
+        dgvAnimals.GridColor = SystemColors.WindowText;
+        dgvAnimals.Location = new Point(33, 43);
+        dgvAnimals.Name = "dgvAnimals";
+        dgvAnimals.RowHeadersVisible = false;
+        dgvAnimals.RowHeadersWidth = 82;
+        dgvAnimals.Size = new Size(1487, 175);
+        dgvAnimals.TabIndex = 6;
+        dgvAnimals.CellContentClick += dataGridView1_CellContentClick;
         // 
         // colAnimalID
         // 
         colAnimalID.HeaderText = "Animal ID";
+        colAnimalID.MinimumWidth = 10;
         colAnimalID.Name = "colAnimalID";
         colAnimalID.ReadOnly = true;
         // 
         // colName
         // 
         colName.HeaderText = "Name";
+        colName.MinimumWidth = 10;
         colName.Name = "colName";
         colName.ReadOnly = true;
         // 
         // colSpecies
         // 
         colSpecies.HeaderText = "Species";
+        colSpecies.MinimumWidth = 10;
         colSpecies.Name = "colSpecies";
         colSpecies.ReadOnly = true;
         // 
         // colAge
         // 
         colAge.HeaderText = "Age";
+        colAge.MinimumWidth = 10;
         colAge.Name = "colAge";
         colAge.ReadOnly = true;
         // 
         // colRecoveryScore
         // 
         colRecoveryScore.HeaderText = "Recovery Score";
+        colRecoveryScore.MinimumWidth = 10;
         colRecoveryScore.Name = "colRecoveryScore";
         colRecoveryScore.ReadOnly = true;
         // 
         // colStatus
         // 
         colStatus.HeaderText = "Status";
+        colStatus.MinimumWidth = 10;
         colStatus.Name = "colStatus";
         colStatus.ReadOnly = true;
         // 
         // colHousingUnit
         // 
         colHousingUnit.HeaderText = "Housing Unit";
+        colHousingUnit.MinimumWidth = 10;
         colHousingUnit.Name = "colHousingUnit";
         colHousingUnit.ReadOnly = true;
         // 
@@ -422,7 +434,7 @@ public partial class grpAnimalRecords : Form
         // 
         txtSearchID.Location = new Point(171, 239);
         txtSearchID.Name = "txtSearchID";
-        txtSearchID.Size = new Size(242, 25);
+        txtSearchID.Size = new Size(242, 43);
         txtSearchID.TabIndex = 2;
         txtSearchID.TextChanged += textBox1_TextChanged_1;
         // 
@@ -432,13 +444,13 @@ public partial class grpAnimalRecords : Form
         LabelsearchID.ForeColor = SystemColors.ActiveCaptionText;
         LabelsearchID.Location = new Point(33, 240);
         LabelsearchID.Name = "LabelsearchID";
-        LabelsearchID.Size = new Size(132, 19);
+        LabelsearchID.Size = new Size(254, 37);
         LabelsearchID.TabIndex = 1;
         LabelsearchID.Text = "Search by Animal ID";
         // 
         // grpAnimalRecords
         // 
-        AutoScaleDimensions = new SizeF(7F, 17F);
+        AutoScaleDimensions = new SizeF(15F, 37F);
         AutoScaleMode = AutoScaleMode.Font;
         AutoSize = true;
         BackColor = SystemColors.ButtonHighlight;
@@ -459,13 +471,8 @@ public partial class grpAnimalRecords : Form
         grpAnimalDetails.PerformLayout();
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)dgvAnimals).EndInit();
         ResumeLayout(false);
-    }
-
-    private void Form1_Load(object sender, EventArgs e)
-    {
-
     }
 
     private void label3_Click(object sender, EventArgs e)
@@ -523,7 +530,7 @@ public partial class grpAnimalRecords : Form
     private Button buttonGenerate;
     private Button buttonDelete;
     private Button buttonSearch;
-    private DataGridView dataGridView1;
+    private DataGridView dgvAnimals;
     private DataGridViewTextBoxColumn colAnimalID;
     private DataGridViewTextBoxColumn colName;
     private DataGridViewTextBoxColumn colSpecies;

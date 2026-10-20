@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,7 +62,7 @@ namespace BaobabRidgeWildlifeRecords
             {
                 foreach (Animal animal in Animals)
                 {
-                    if (animal.AnimalID == animalID)
+                    if (animal.animalID == animalID)
                     {
                         Animals.Remove(animal);
                         MessageBox.Show("Animal was successfully found and deleted");
@@ -100,7 +100,7 @@ namespace BaobabRidgeWildlifeRecords
                 {
                     foreach(Animal animal in Animals)
                     {
-                        writer.WriteLine($"{animal.AnimalID}|{animal.Name}|{animal.Species}|{animal.Age}|{animal.RecoveryScore}|{animal.Status}|{animal.HousingUnit}");
+                        writer.WriteLine($"{animal.animalID}|{animal.name}|{animal.species}|{animal.age}|{animal.recoveryScore}|{animal.status}|{animal.housingUnit}");
                     }
                 }
             }
